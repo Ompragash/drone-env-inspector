@@ -46,7 +46,8 @@ func Exec(ctx context.Context, args Args) error {
 			logrus.Warnf("environment variable %s does not exist\n", name)
 		}
 
-		logrus.Infof("inspecting environment variable: %s\n", name)
+		// Echo the environment variable value to console
+		logrus.Infof("%s=%s\n", name, value)
 
 		var err error
 		if args.Secret {
@@ -59,11 +60,7 @@ func Exec(ctx context.Context, args Args) error {
 			return err
 		}
 
-		if exists {
-			logrus.Infof("successfully exported %s\n", name)
-		} else {
-			logrus.Infof("exported %s with empty value (variable does not exist)\n", name)
-		}
+		logrus.Debugf("successfully exported %s to output file\n", name)
 	}
 
 	return nil

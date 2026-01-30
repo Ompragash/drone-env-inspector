@@ -23,7 +23,8 @@ To learn how to utilize Drone plugins in Harness CI, please consult the provided
 
 ## Notes
 
-- The plugin reads the value of each specified environment variable and writes it to the output file in `KEY=VALUE` format.
+- The plugin echoes the value of each specified environment variable to the console in `KEY=VALUE` format (e.g., `DRONE_OUTPUT=/path/to/output`).
+- The plugin also writes the values to the output file for use in subsequent pipeline steps.
 - If an environment variable does not exist, the plugin will log a warning and output an empty value for that variable.
 - Multiple environment variables can be specified using comma-separated values (e.g., `VAR1,VAR2,VAR3`).
 - Spaces around variable names are automatically trimmed.
