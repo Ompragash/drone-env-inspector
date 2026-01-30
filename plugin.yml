@@ -1,0 +1,4 @@
+run:
+  go:
+    module: github.com/harness-community/drone-env-inspector
+
